@@ -5852,23 +5852,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\s533711\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\S533490\\.nuget\\packages\\": {},
+    "c:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s533711\\Desktop\\Semester 2\\C# .NET\\MVC\\WebApplication4\\tests\\UnitTests\\UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\S533490\\Documents\\44663\\MVC\\tests\\UnitTests\\UnitTests.csproj",
       "projectName": "UnitTests",
-      "projectPath": "C:\\Users\\s533711\\Desktop\\Semester 2\\C# .NET\\MVC\\WebApplication4\\tests\\UnitTests\\UnitTests.csproj",
-      "packagesPath": "C:\\Users\\s533711\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s533711\\Desktop\\Semester 2\\C# .NET\\MVC\\WebApplication4\\tests\\UnitTests\\obj\\",
+      "projectPath": "C:\\Users\\S533490\\Documents\\44663\\MVC\\tests\\UnitTests\\UnitTests.csproj",
+      "packagesPath": "C:\\Users\\S533490\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\S533490\\Documents\\44663\\MVC\\tests\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "c:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\s533711\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\S533490\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
