@@ -12078,9 +12078,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\S533490\\Documents\\44663\\MVC\\src\\WebApplication4\\WebApplication4.csproj",
-      "projectName": "WebApplication4",
-      "projectPath": "C:\\Users\\S533490\\Documents\\44663\\MVC\\src\\WebApplication4\\WebApplication4.csproj",
+      "projectUniqueName": "C:\\Users\\S533490\\Documents\\44663\\MVC\\src\\WebApplication4\\WebApplicationMVC.csproj",
+      "projectName": "WebApplicationMVC",
+      "projectPath": "C:\\Users\\S533490\\Documents\\44663\\MVC\\src\\WebApplication4\\WebApplicationMVC.csproj",
       "packagesPath": "C:\\Users\\S533490\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\S533490\\Documents\\44663\\MVC\\src\\WebApplication4\\obj\\",
       "projectStyle": "PackageReference",

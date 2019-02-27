@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication4", "WebApplication4\WebApplication4.csproj", "{1698D2F1-DF39-49B9-8757-ABC215654E29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplicationMVC", "WebApplication4\WebApplicationMVC.csproj", "{1698D2F1-DF39-49B9-8757-ABC215654E29}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E697A689-18E4-478B-BB64-979998225561}"
 EndProject
@@ -47,13 +47,13 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3F7A11C5-804E-4D23-AC2F-E95FFFBF402B}
-	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{FDBD28D1-8683-4F7E-919D-E2B0E4FD273E} = {E697A689-18E4-478B-BB64-979998225561}
 		{D301DCF2-489C-4E6C-987C-A5B93158ADD6} = {2FF7DF5E-2707-4868-B010-6BB1DE0F1222}
 		{B2D51336-FFE2-4D63-BF8A-76C1C983D342} = {2FF7DF5E-2707-4868-B010-6BB1DE0F1222}
 		{7DDEC0E3-852F-4D14-A35C-34D840861C7A} = {2FF7DF5E-2707-4868-B010-6BB1DE0F1222}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3F7A11C5-804E-4D23-AC2F-E95FFFBF402B}
 	EndGlobalSection
 EndGlobal
