@@ -29,9 +29,11 @@ namespace WebApplication4.Controllers
     }
 }
 */
-    public List<Credit> GetCreditsList()
+    public class CreditsController : Controller
     {
-        return new List<Credit>{
+        public List<Credit> GetCreditsList()
+        {
+      return new List<Credit>{
       new Credit{
          CreditID = 460,
          CreditAbbrev = "CreditAbbrev",
@@ -58,5 +60,6 @@ namespace WebApplication4.Controllers
          IsFall=1
       },
    };
-}
+        }
+    }
 }
