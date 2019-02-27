@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication4.Models
+namespace WebApplicationMVC.Models
 {
     public class Slot
     {
@@ -12,6 +12,5 @@ namespace WebApplication4.Models
         public int Term;
         public int CreditID;
         public int Status;
-
     }
 }
