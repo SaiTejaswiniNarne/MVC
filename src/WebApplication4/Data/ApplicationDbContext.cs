@@ -18,24 +18,24 @@ namespace WebApplication4.Data
         }
 
         public DbSet<Degree> Degrees { get; set; }
-        public DbSet<Credit> Credit { get; set; }
-        public DbSet<DegreeCredit> DegreeCredit { get; set; }
-        public DbSet<DegreePlan> DegreePlan { get; set; }
-        public DbSet<Slot> Slot { get; set; }
-        public DbSet<Student> Student { get; set; }
-        public DbSet<Student> StudentTerm { get; set; }
+        public DbSet<Credit> Credits { get; set; }
+        public DbSet<DegreeCredit> DegreeCredits { get; set; }
+        public DbSet<DegreePlan> DegreePlans { get; set; }
+        public DbSet<Slot> Slots { get; set; }
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Student> StudentTerms { get; set; }
        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Credit>().ToTable("Credit");
-            modelBuilder.Entity<Degree>().ToTable("Degree");
-            modelBuilder.Entity<DegreeCredit>().ToTable("DegreeCredit");
-            modelBuilder.Entity<DegreePlan>().ToTable("DegreePlan");
-            modelBuilder.Entity<Slot>().ToTable("Slot");
-            modelBuilder.Entity<Student>().ToTable("Student");
-            modelBuilder.Entity<StudentTerm>().ToTable("StudentTerm");
+            modelBuilder.Entity<Credit>().ToTable("Credits");
+            modelBuilder.Entity<Degree>().ToTable("Degrees");
+            modelBuilder.Entity<DegreeCredit>().ToTable("DegreeCredits");
+            modelBuilder.Entity<DegreePlan>().ToTable("DegreePlans");
+            modelBuilder.Entity<Slot>().ToTable("Slots");
+            modelBuilder.Entity<Student>().ToTable("Students");
+            modelBuilder.Entity<StudentTerm>().ToTable("StudentTerms");
 
         }
 

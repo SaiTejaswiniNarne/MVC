@@ -10,8 +10,7 @@ namespace WebApplication4.Models
     {
         public int DegreePlanID;
         public int StudentID;
-        public int DegreePlanAbbrev;
-        public int DegreePlanName;
-
+        public String DegreePlanAbbrev;
+        public String DegreePlanName;
     }
 }
