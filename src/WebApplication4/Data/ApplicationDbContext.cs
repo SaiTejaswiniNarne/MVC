@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebApplication4.Data;
-//using WebApplication4.Models;
-using WebApplicationMVC.Models;
+//using WebApplication4.Data;
+using WebApplication4.Models;
 
 namespace WebApplication4.Data
 {   
     public class ApplicationDbContext : IdentityDbContext
     {
+        //private object modelBuilder;
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -23,47 +24,22 @@ namespace WebApplication4.Data
         public DbSet<Slot> Slot { get; set; }
         public DbSet<Student> Student { get; set; }
         public DbSet<Student> StudentTerm { get; set; }
+       
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
-            modelBuilder.Entity<ApplicationUser>().ToTable("ApplicationUser");
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Credit>().ToTable("Credit");
             modelBuilder.Entity<Degree>().ToTable("Degree");
+            modelBuilder.Entity<DegreeCredit>().ToTable("DegreeCredit");
+            modelBuilder.Entity<DegreePlan>().ToTable("DegreePlan");
+            modelBuilder.Entity<Slot>().ToTable("Slot");
+            modelBuilder.Entity<Student>().ToTable("Student");
+            modelBuilder.Entity<StudentTerm>().ToTable("StudentTerm");
 
         }
 
 
     }
     
-    /*
-    public static class DbInitializer
-    {
-        public static void Initialize(ApplicationDbContext context)
-        {
-
-        }
-        if(Context.Degree.Any())
-            {
-            Console.WriteLine("Degree Already exists:");
-            }
-        else
-          {
-            var degrees = new Degree[]
-            {
-                new Degree{DegreeID = 1, DegreeAbbrev = "ACS+2", DegreeName ="MS ACS+2", NumberOfTerms = 5},
-                new Degree{DegreeID = 2, DegreeAbbrev = "ACS+DB", DegreeName ="MS ACS + DB", NumberOfTerms = 5},
-                new Degree{DegreeID = 3, DegreeAbbrev = "ACS+NF", DegreeName ="MS ACS + NF", NumberOfTerms = 5},
-                new Degree{DegreeID = 4, DegreeAbbrev = "ACS", DegreeName ="MS ACS", NumberOfTerms = 5},
-            }
-           };
-            Console.WriteLine($"Inserted {degrees.Length} new degrees.");
-      
-             foreach(Degree d in degrees)
-               {
-                    context.Degrees.Add(d);
-               }
-    context.SaveChanges();
-    }
-    */
-
 }
