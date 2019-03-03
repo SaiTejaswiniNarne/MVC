@@ -13,5 +13,8 @@ namespace WebApplication4.Models
         public int StudentID;
         public String DegreePlanAbbrev;
         public String DegreePlanName;
+        public ICollection<Student> Students { get; set; }
+
     }
+
 }

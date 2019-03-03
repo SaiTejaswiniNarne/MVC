@@ -14,5 +14,8 @@ namespace WebApplication4.Models
         public int Term;
         public int CreditID;
         public string Status;
+        public ICollection<DegreePlan> DegreePlans { get; set; }
+        public ICollection<StudentTerm> StudentTerms { get; set; }
+        public ICollection<Credit> Credits { get; set; }
     }
 }
