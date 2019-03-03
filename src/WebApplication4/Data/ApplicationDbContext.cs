@@ -23,7 +23,7 @@ namespace WebApplication4.Data
         public DbSet<DegreePlan> DegreePlans { get; set; }
         public DbSet<Slot> Slots { get; set; }
         public DbSet<Student> Students { get; set; }
-        public DbSet<Student> StudentTerms { get; set; }
+        public DbSet<StudentTerm> StudentTerms { get; set; }
        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

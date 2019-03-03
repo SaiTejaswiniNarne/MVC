@@ -11,5 +11,6 @@ namespace WebApplication4.Models
         public int DegreeCreditID;
         public int DegreeID;
         public int CreditID;
+        public Credit Credit { get; set}
     }
 }

@@ -221,7 +221,7 @@ namespace WebApplication4.Data
                 context.SaveChanges();
             }
             //This section ends
-            //This section is for Sonam: Student.cs
+            //This section is for Sonam: StudentTerms.cs
             if (context.StudentTerms.Any())
             {
                 Console.WriteLine("Student Already exists:");
@@ -251,35 +251,33 @@ namespace WebApplication4.Data
 
 
            };
-                Console.WriteLine($"Inserted {students.Length} new degrees.");
+                Console.WriteLine($"Inserted {studentterms.Length} new degrees.");
 
-                foreach (Student d in students)
+                foreach (StudentTerm d in studentterms)
                 {
-                    context.Students.Add(d);
+                    context.StudentTerms.Add(d);
                 }
                 context.SaveChanges();
             }
             //This section ends
-            //This section is for Sonam: StudentTerm.cs
-            if (context.Degrees.Any())
+            //This section is for Sonam: Student.cs
+            if (context.Students.Any())
             {
                 Console.WriteLine("Degree Already exists:");
             }
             else
             {
-                var degrees = new Degree[]
+                var students = new Student[]
             {
-                new Degree{DegreeID = 1, DegreeAbbrev = "ACS+2", DegreeName ="MS ACS+2", NumberOfTerms = 5},
-                new Degree{DegreeID = 2, DegreeAbbrev = "ACS+DB", DegreeName ="MS ACS + DB", NumberOfTerms = 5},
-                new Degree{DegreeID = 3, DegreeAbbrev = "ACS+NF", DegreeName ="MS ACS + NF", NumberOfTerms = 5},
-                new Degree{DegreeID = 4, DegreeAbbrev = "ACS", DegreeName ="MS ACS", NumberOfTerms = 5},
-
+                new Student{StudentID = 533726 , Family = "Narne" , Given ="Sai Tejaswini", Snumber =533726 , number_919=919571565},
+                new Student{StudentID = 533490 , Family = "Gadekari" , Given ="Sonam", Snumber =533490 , number_919=919568899},
+                new Student{StudentID = 533711 , Family = "Naidu" , Given ="Harika", Snumber =533711 , number_919=919570594},
            };
-                Console.WriteLine($"Inserted {degrees.Length} new degrees.");
+                Console.WriteLine($"Inserted {students.Length} new degrees.");
 
-                foreach (Degree d in degrees)
+                foreach (Student d in students)
                 {
-                    context.Degrees.Add(d);
+                    context.Students.Add(d);
                 }
                 context.SaveChanges();
             }
