@@ -13,6 +13,7 @@ namespace WebApplication4.Models
         public string Given { get;  set; }
         public int Snumber { get; set; }
         public int Number_919 { get; set; }
+
         
     }
 }

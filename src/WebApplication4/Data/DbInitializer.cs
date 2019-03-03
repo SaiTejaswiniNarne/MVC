@@ -166,41 +166,88 @@ namespace WebApplication4.Data
             }
             //This section ends
             //This section is for Sonam: Slot.cs
-            if (context.Degrees.Any())
+            if (context.Slots.Any())
             {
                 Console.WriteLine("Degree Already exists:");
             }
             else
             {
-                var degrees = new Degree[]
+                var slots = new Slot[]
             {
-                new Degree{DegreeID = 1, DegreeAbbrev = "ACS+2", DegreeName ="MS ACS+2", NumberOfTerms = 5},
-                new Degree{DegreeID = 2, DegreeAbbrev = "ACS+DB", DegreeName ="MS ACS + DB", NumberOfTerms = 5},
-                new Degree{DegreeID = 3, DegreeAbbrev = "ACS+NF", DegreeName ="MS ACS + NF", NumberOfTerms = 5},
-                new Degree{DegreeID = 4, DegreeAbbrev = "ACS", DegreeName ="MS ACS", NumberOfTerms = 5},
+                     new Slot{SlotID = 1 , DegreePlan = 7251 ,Term =1, CreditID =460, Status ="C" },
+                     new Slot{SlotID = 2 , DegreePlan = 7251 ,Term =1, CreditID =542, Status ="C" },
+                     new Slot{SlotID = 3 , DegreePlan = 7251 ,Term =1, CreditID =563, Status ="C" },
+                     new Slot{SlotID = 4 , DegreePlan = 7251 ,Term =2, CreditID =560, Status ="A" },
+                     new Slot{SlotID = 5 , DegreePlan = 7251 ,Term =2, CreditID =664, Status ="A" },
+                     new Slot{SlotID = 6 , DegreePlan = 7251 ,Term =2, CreditID =6, Status ="A" },
+                     new Slot{SlotID = 7 , DegreePlan = 7251 ,Term =3, CreditID =618, Status ="P" },
+                     new Slot{SlotID = 8 , DegreePlan = 7251 ,Term =3, CreditID =691, Status ="P" },
+                     new Slot{SlotID = 9 , DegreePlan = 7251 ,Term =4, CreditID =692, Status ="P" },
+                     new Slot{SlotID = 10 , DegreePlan = 7251 ,Term =4, CreditID =1, Status ="P" },
+                     new Slot{SlotID = 11 , DegreePlan = 7251 ,Term =4, CreditID =2, Status ="P" },
+                     new Slot{SlotID = 12 , DegreePlan = 7251 ,Term =5, CreditID =555, Status ="P" },
+                     new Slot{SlotID = 13 , DegreePlan = 7252 ,Term =1, CreditID =460, Status ="C" },
+                     new Slot{SlotID = 14 , DegreePlan = 7252 ,Term =1, CreditID =542, Status ="C" },
+                     new Slot{SlotID = 15 , DegreePlan = 7252 ,Term =1, CreditID =563, Status ="C" },
+                     new Slot{SlotID = 16 , DegreePlan = 7252 ,Term =3, CreditID =560, Status ="C" },
+                     new Slot{SlotID = 17 , DegreePlan = 7252 ,Term =3, CreditID =664, Status ="A" },
+                     new Slot{SlotID = 18 , DegreePlan = 7252 ,Term =3, CreditID =6, Status ="A" },
+                     new Slot{SlotID = 19 , DegreePlan = 7252 ,Term =4, CreditID =691, Status ="A" },
+                     new Slot{SlotID = 20 , DegreePlan = 7252 ,Term =4, CreditID =618, Status ="P" },
+                     new Slot{SlotID = 21 , DegreePlan = 7252 ,Term =5, CreditID =692, Status ="P" },
+                     new Slot{SlotID = 22 , DegreePlan = 7252 ,Term =5, CreditID =1, Status ="P" },
+                     new Slot{SlotID = 23 , DegreePlan = 7252 ,Term =6, CreditID =555, Status ="P" },
+                     new Slot{SlotID = 24 , DegreePlan = 7252 ,Term =6, CreditID =2, Status ="P" },
+                     new Slot{SlotID = 25 , DegreePlan = 7255 ,Term =1, CreditID =460, Status ="C" },
+                     new Slot{SlotID = 26 , DegreePlan = 7255 ,Term =1, CreditID =542, Status ="C" },
+                     new Slot{SlotID = 27 , DegreePlan = 7255 ,Term =1, CreditID =563, Status ="C" },
+                     new Slot{SlotID = 28 , DegreePlan = 7255 ,Term =2, CreditID =6, Status ="A" },
+                     new Slot{SlotID = 29 , DegreePlan = 7255 ,Term =2, CreditID =618, Status ="A" },
+                     new Slot{SlotID = 30 , DegreePlan = 7255 ,Term =2, CreditID =560, Status ="A" },
+                     new Slot{SlotID = 31 , DegreePlan = 7255 ,Term =4, CreditID =691, Status ="P" },
+                     new Slot{SlotID = 32 , DegreePlan = 7255 ,Term =4, CreditID =1, Status ="P" },
+                     new Slot{SlotID = 33 , DegreePlan = 7255 ,Term =4, CreditID =2, Status ="P" },
+                     new Slot{SlotID = 34 , DegreePlan = 7255 ,Term =5, CreditID =555, Status ="P" },
+                     new Slot{SlotID = 35 , DegreePlan = 7255 ,Term =5, CreditID =664, Status ="P" },
+                     new Slot{SlotID = 36 , DegreePlan = 7255 ,Term =6, CreditID =692, Status ="P" },
 
            };
-                Console.WriteLine($"Inserted {degrees.Length} new degrees.");
+                Console.WriteLine($"Inserted {slots.Length} new degrees.");
 
-                foreach (Degree d in degrees)
+                foreach (Slot d in slots)
                 {
-                    context.Degrees.Add(d);
+                    context.Slots.Add(d);
                 }
                 context.SaveChanges();
             }
             //This section ends
             //This section is for Sonam: Student.cs
-            if (context.Students.Any())
+            if (context.StudentTerms.Any())
             {
                 Console.WriteLine("Student Already exists:");
             }
             else
             {
-                var students = new Student[]
+                var studentterms = new StudentTerm[]
             {
-                new Student{StudentID = 533726 , Family = "Narne" , Given ="Sai Tejaswini", Snumber =533726 , number_919=919571565},
-                new Student{StudentID = 533490 , Family = "Gadekari" , Given ="Sonam", Snumber =533490 , number_919=919568899},
-                new Student{StudentID = 533711 , Family = "Naidu" , Given ="Harika", Snumber =533711 , number_919=919570594},
+                new StudentTerm{StudentTermID = 1 , StudentID = 533726 ,Term =1, TermAbbrev = "F19",  TermName ="Fall 2019" },
+                 new StudentTerm{StudentTermID = 2 , StudentID = 533726 ,Term =2, TermAbbrev = "S20",  TermName ="Spring 2020" },
+                 new StudentTerm{StudentTermID = 3 , StudentID = 533726 ,Term =3, TermAbbrev = "Su20",  TermName ="Summer 2020" },
+                 new StudentTerm{StudentTermID = 4 , StudentID = 533726 ,Term =4, TermAbbrev = "F20",  TermName ="Fall 2020" },
+                 new StudentTerm{StudentTermID = 5 , StudentID = 533726 ,Term =5, TermAbbrev = "S21",  TermName ="Spring 2021" },
+                 new StudentTerm{StudentTermID = 6 , StudentID = 533490 ,Term =1, TermAbbrev = "S19",  TermName ="Spring 2019" },
+                 new StudentTerm{StudentTermID = 7 , StudentID = 533490 ,Term =2, TermAbbrev = "Su19",  TermName ="Summer 2019" },
+                 new StudentTerm{StudentTermID = 8 , StudentID = 533490 ,Term =3, TermAbbrev = "F19",  TermName ="Fall 2019" },
+                 new StudentTerm{StudentTermID = 9 , StudentID = 533490 ,Term =4, TermAbbrev = "S20",  TermName ="Spring 2020" },
+                 new StudentTerm{StudentTermID = 10 , StudentID = 533490 ,Term =5, TermAbbrev = "Su20",  TermName ="Summer 2020" },
+                 new StudentTerm{StudentTermID = 11 , StudentID = 533490 ,Term =6, TermAbbrev = "F20",  TermName ="Fall 2020" },
+                 new StudentTerm{StudentTermID = 12 , StudentID = 533711 ,Term =1, TermAbbrev = "F18",  TermName ="Fall 2018" },
+                 new StudentTerm{StudentTermID = 13 , StudentID = 533711 ,Term =2, TermAbbrev = "S19",  TermName ="Spring 2019" },
+                 new StudentTerm{StudentTermID = 14 , StudentID = 533711 ,Term =3, TermAbbrev = "Su19",  TermName ="Summer 2019" },
+                 new StudentTerm{StudentTermID = 15 , StudentID = 533711 ,Term =4, TermAbbrev = "F19",  TermName ="Fall 2019" },
+                 new StudentTerm{StudentTermID = 16 , StudentID = 533711 ,Term =5, TermAbbrev = "S20",  TermName ="Spring 2020" },
+                 new StudentTerm{StudentTermID = 17 , StudentID = 533711 ,Term =6, TermAbbrev = "Su19",  TermName ="Summer 2020" },
+
 
 
            };

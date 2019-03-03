@@ -12,6 +12,6 @@ namespace WebApplication4.Models
         public int DegreePlan;
         public int Term;
         public int CreditID;
-        public int Status;
+        public string Status;
     }
 }

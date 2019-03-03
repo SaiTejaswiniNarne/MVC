@@ -11,7 +11,7 @@ namespace WebApplication4.Models
         public int StudentTermID;
         public int StudentID;
         public int Term;
-        public int TermAbbrev;
-        public int TermName;
+        public string TermAbbrev;
+        public string TermName;
     }
 }
