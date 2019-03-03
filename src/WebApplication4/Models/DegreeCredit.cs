@@ -8,9 +8,15 @@ namespace WebApplication4.Models
 {
     public class DegreeCredit
     {
-        public int DegreeCreditID;
-        public int DegreeID;
-        public int CreditID;
-        public Credit Credit { get; set}
+        //Primarykey is DegreeCreditID
+        public int DegreeCreditID { get; set; }
+        //Foreign keys are DegreeID and CreditID
+        public int DegreeID { get; set; }
+        public int CreditID { get; set; }
+
+
+        //public Credit Credit { get; set}
+        //public Degree Degree{ get; set}
+
     }
 }

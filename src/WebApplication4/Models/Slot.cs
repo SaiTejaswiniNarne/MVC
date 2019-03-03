@@ -9,7 +9,8 @@ namespace WebApplication4.Models
     public class Slot
     {
         public int SlotID;
-        public int DegreePlan;
+        //Foreign keys are DegreePlanID,Term,CreditID
+        public int DegreePlanID;
         public int Term;
         public int CreditID;
         public string Status;

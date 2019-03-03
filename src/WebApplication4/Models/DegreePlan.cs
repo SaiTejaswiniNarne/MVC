@@ -9,6 +9,7 @@ namespace WebApplication4.Models
     public class DegreePlan
     {
         public int DegreePlanID;
+        //Foreign key is StudentID
         public int StudentID;
         public String DegreePlanAbbrev;
         public String DegreePlanName;
