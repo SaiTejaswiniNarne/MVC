@@ -156,7 +156,7 @@ namespace WebApplication4.Data
                 new DegreePlan{DegreePlanID = 7254, StudentID = 533711, DegreePlanAbbrev = "Early completion", DegreePlanName = "Fall 2018 fast track"},
                 new DegreePlan{DegreePlanID = 7255, StudentID = 533711, DegreePlanAbbrev = "Slow and Easy", DegreePlanName = "Take a Summer off"},
            };
-                Console.WriteLine($"Inserted {degreeplans.Length} new degrees.");
+                Console.WriteLine($"Inserted {degreeplans.Length} new degreePlans.");
 
                 foreach (DegreePlan dp in degreeplans)
                 {
@@ -168,7 +168,7 @@ namespace WebApplication4.Data
             //This section is for Sonam: Slot.cs
             if (context.Slots.Any())
             {
-                Console.WriteLine("Degree Already exists:");
+                Console.WriteLine("Slots Already exists:");
             }
             else
             {
@@ -212,7 +212,7 @@ namespace WebApplication4.Data
                      new Slot{SlotID = 36 , DegreePlanID = 7255 ,Term =6, CreditID =692, Status ="P" },
 
            };
-                Console.WriteLine($"Inserted {slots.Length} new degrees.");
+                Console.WriteLine($"Inserted {slots.Length} new slots.");
 
                 foreach (Slot d in slots)
                 {
@@ -224,7 +224,7 @@ namespace WebApplication4.Data
             //This section is for Sonam: StudentTerms.cs
             if (context.StudentTerms.Any())
             {
-                Console.WriteLine("Student Already exists:");
+                Console.WriteLine("StudentTerms Already exists:");
             }
             else
             {
@@ -251,7 +251,7 @@ namespace WebApplication4.Data
 
 
            };
-                Console.WriteLine($"Inserted {studentterms.Length} new degrees.");
+                Console.WriteLine($"Inserted {studentterms.Length} new studentTerms.");
 
                 foreach (StudentTerm d in studentterms)
                 {
@@ -263,7 +263,7 @@ namespace WebApplication4.Data
             //This section is for Sonam: Student.cs
             if (context.Students.Any())
             {
-                Console.WriteLine("Degree Already exists:");
+                Console.WriteLine("Student Already exists:");
             }
             else
             {
@@ -273,7 +273,7 @@ namespace WebApplication4.Data
                 new Student{StudentID = 533490 , Family = "Gadekari" , Given ="Sonam", Snumber =533490 , number_919=919568899},
                 new Student{StudentID = 533711 , Family = "Naidu" , Given ="Harika", Snumber =533711 , number_919=919570594},
            };
-                Console.WriteLine($"Inserted {students.Length} new degrees.");
+                Console.WriteLine($"Inserted {students.Length} new students.");
 
                 foreach (Student d in students)
                 {
