@@ -14,12 +14,11 @@ namespace WebApplication4.Models
         public int CreditID { get; set; }
         public int DegreeID { get; set; }
 
-        public ICollection<Degree> Degrees { get; set; }
-        public ICollection<Credit> Credits { get; set; }
+        //public ICollection<Degree> Degrees { get; set; }
+        //public ICollection<Credit> Credits { get; set; }
 
-
-        //public Credit Credit { get; set}
-        //public Degree Degree{ get; set}
+        public Credit Credit { get; set; }
+        public Degree Degree{ get; set; }
 
     }
 }
