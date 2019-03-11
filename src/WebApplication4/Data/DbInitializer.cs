@@ -15,6 +15,7 @@ namespace WebApplication4.Data
         public static void Initialize(ApplicationDbContext context)
         {
             // This section is for Harika: To work on Degree
+           
             if (context.Degrees.Any())
             {
                 Console.WriteLine("Degree Already exists:");

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication4.Data;
@@ -8,6 +9,7 @@ namespace WebApplication4.Models
 {
     public class DegreeCredit
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         //Primarykey is DegreeCreditID
         public int DegreeCreditID { get; set; }
         //Foreign keys are DegreeID and CreditID       

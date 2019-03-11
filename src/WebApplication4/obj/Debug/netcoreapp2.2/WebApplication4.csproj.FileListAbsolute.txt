@@ -101,7 +101,6 @@ C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\bin\Debug\netcoreapp2.2
 C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\bin\Debug\netcoreapp2.2\WebApplication4.pdb
 C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\bin\Debug\netcoreapp2.2\WebApplication4.Views.dll
 C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\bin\Debug\netcoreapp2.2\WebApplication4.Views.pdb
-C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.csprojAssemblyReference.cache
 C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.csproj.CoreCompileInputs.cache
 C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.RazorAssemblyInfo.cache
 C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.RazorAssemblyInfo.cs
@@ -126,3 +125,4 @@ C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2
 C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.dll
 C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.pdb
 C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.csproj.CopyComplete
+C:\Users\S533490\Documents\44663\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.csprojAssemblyReference.cache
