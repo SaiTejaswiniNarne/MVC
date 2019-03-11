@@ -190,3 +190,8 @@ C:\Users\s533711\Desktop\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebAppl
 C:\Users\s533711\Desktop\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.dll
 C:\Users\s533711\Desktop\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.pdb
 C:\Users\s533711\Desktop\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\WebApplication4.csproj.CopyComplete
+C:\Users\s533711\Desktop\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\Razor\Views\Slots\Create.g.cshtml.cs
+C:\Users\s533711\Desktop\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\Razor\Views\Slots\Delete.g.cshtml.cs
+C:\Users\s533711\Desktop\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\Razor\Views\Slots\Details.g.cshtml.cs
+C:\Users\s533711\Desktop\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\Razor\Views\Slots\Edit.g.cshtml.cs
+C:\Users\s533711\Desktop\MVC\src\WebApplication4\obj\Debug\netcoreapp2.2\Razor\Views\Slots\Index.g.cshtml.cs
