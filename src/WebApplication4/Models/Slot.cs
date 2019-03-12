@@ -11,15 +11,16 @@ namespace WebApplication4.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int SlotID { get; set; }
-        //Foreign keys are DegreePlanID,Term,CreditID
         public int DegreePlanID { get; set; }
+        [ForeignKey("DegreePlanID")]
+        public DegreePlan DegreePlan { get; set; }
         public int Term { get; set; }
         public int CreditID { get; set; }
-        public string Status { get; set; }
-        public DegreePlan DegreePlan { get; set; }
+        [ForeignKey("CreditID")]
         public Credit Credit { get; set; }
-        // public ICollection<DegreePlan> DegreePlans { get; set; }
-        //public ICollection<StudentTerm> StudentTerms { get; set; }
-        //public ICollection<Credit> Credits { get; set; }
+        public string Status { get; set; }
+        
+       
+        public ICollection<Credit> Credits { get; set; }
     }
 }

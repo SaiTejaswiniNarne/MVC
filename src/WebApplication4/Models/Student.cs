@@ -15,8 +15,6 @@ namespace WebApplication4.Models
         public string Given { get;  set; }
         public int Snumber { get; set; }
         public int number_919 { get; set; }
-      //  public int DegreePlanID { get; set; }
-//        public DegreePlan DegreePlan { get; set; }
 
     }
 }

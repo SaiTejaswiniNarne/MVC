@@ -10,17 +10,14 @@ namespace WebApplication4.Models
     public class DegreeCredit
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        //Primarykey is DegreeCreditID
         public int DegreeCreditID { get; set; }
-        //Foreign keys are DegreeID and CreditID       
-        public int CreditID { get; set; }
         public int DegreeID { get; set; }
-
-        //public ICollection<Degree> Degrees { get; set; }
-        //public ICollection<Credit> Credits { get; set; }
-
+        [ForeignKey("DegreeID")]
+        public Degree Degree { get; set; }
+        public int CreditID { get; set; }
+        [ForeignKey("CreditID")]
         public Credit Credit { get; set; }
-        public Degree Degree{ get; set; }
+       
 
     }
 }

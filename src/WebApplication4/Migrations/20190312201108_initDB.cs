@@ -48,22 +48,6 @@ namespace WebApplication4.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Credits",
-                columns: table => new
-                {
-                    CreditID = table.Column<int>(nullable: false),
-                    CreditAbbrev = table.Column<string>(nullable: true),
-                    CreditName = table.Column<string>(nullable: true),
-                    IsSummer = table.Column<int>(nullable: false),
-                    IsSpring = table.Column<int>(nullable: false),
-                    IsFall = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Credits", x => x.CreditID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Degrees",
                 columns: table => new
                 {
@@ -214,47 +198,48 @@ namespace WebApplication4.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "DegreeCredits",
-                columns: table => new
-                {
-                    DegreeCreditID = table.Column<int>(nullable: false),
-                    CreditID = table.Column<int>(nullable: false),
-                    DegreeID = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DegreeCredits", x => x.DegreeCreditID);
-                    table.ForeignKey(
-                        name: "FK_DegreeCredits_Credits_CreditID",
-                        column: x => x.CreditID,
-                        principalTable: "Credits",
-                        principalColumn: "CreditID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_DegreeCredits_Degrees_DegreeID",
-                        column: x => x.DegreeID,
-                        principalTable: "Degrees",
-                        principalColumn: "DegreeID",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "DegreePlans",
                 columns: table => new
                 {
                     DegreePlanID = table.Column<int>(nullable: false),
                     StudentID = table.Column<int>(nullable: false),
                     DegreePlanAbbrev = table.Column<string>(nullable: true),
-                    DegreePlanName = table.Column<string>(nullable: true)
+                    DegreePlanName = table.Column<string>(nullable: true),
+                    DegreeID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DegreePlans", x => x.DegreePlanID);
                     table.ForeignKey(
+                        name: "FK_DegreePlans_Degrees_DegreeID",
+                        column: x => x.DegreeID,
+                        principalTable: "Degrees",
+                        principalColumn: "DegreeID",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
                         name: "FK_DegreePlans_Students_StudentID",
                         column: x => x.StudentID,
                         principalTable: "Students",
                         principalColumn: "StudentID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "DegreeCredits",
+                columns: table => new
+                {
+                    DegreeCreditID = table.Column<int>(nullable: false),
+                    DegreeID = table.Column<int>(nullable: false),
+                    CreditID = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DegreeCredits", x => x.DegreeCreditID);
+                    table.ForeignKey(
+                        name: "FK_DegreeCredits_Degrees_DegreeID",
+                        column: x => x.DegreeID,
+                        principalTable: "Degrees",
+                        principalColumn: "DegreeID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -272,17 +257,34 @@ namespace WebApplication4.Migrations
                 {
                     table.PrimaryKey("PK_Slots", x => x.SlotID);
                     table.ForeignKey(
-                        name: "FK_Slots_Credits_CreditID",
-                        column: x => x.CreditID,
-                        principalTable: "Credits",
-                        principalColumn: "CreditID",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Slots_DegreePlans_DegreePlanID",
                         column: x => x.DegreePlanID,
                         principalTable: "DegreePlans",
                         principalColumn: "DegreePlanID",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Credits",
+                columns: table => new
+                {
+                    CreditID = table.Column<int>(nullable: false),
+                    CreditAbbrev = table.Column<string>(nullable: true),
+                    CreditName = table.Column<string>(nullable: true),
+                    IsSummer = table.Column<int>(nullable: false),
+                    IsSpring = table.Column<int>(nullable: false),
+                    IsFall = table.Column<int>(nullable: false),
+                    SlotID = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Credits", x => x.CreditID);
+                    table.ForeignKey(
+                        name: "FK_Credits_Slots_SlotID",
+                        column: x => x.SlotID,
+                        principalTable: "Slots",
+                        principalColumn: "SlotID",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -325,6 +327,11 @@ namespace WebApplication4.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Credits_SlotID",
+                table: "Credits",
+                column: "SlotID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_DegreeCredits_CreditID",
                 table: "DegreeCredits",
                 column: "CreditID");
@@ -332,6 +339,11 @@ namespace WebApplication4.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_DegreeCredits_DegreeID",
                 table: "DegreeCredits",
+                column: "DegreeID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DegreePlans_DegreeID",
+                table: "DegreePlans",
                 column: "DegreeID");
 
             migrationBuilder.CreateIndex(
@@ -348,10 +360,30 @@ namespace WebApplication4.Migrations
                 name: "IX_Slots_DegreePlanID",
                 table: "Slots",
                 column: "DegreePlanID");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_DegreeCredits_Credits_CreditID",
+                table: "DegreeCredits",
+                column: "CreditID",
+                principalTable: "Credits",
+                principalColumn: "CreditID",
+                onDelete: ReferentialAction.Cascade);
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Slots_Credits_CreditID",
+                table: "Slots",
+                column: "CreditID",
+                principalTable: "Credits",
+                principalColumn: "CreditID",
+                onDelete: ReferentialAction.Cascade);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Credits_Slots_SlotID",
+                table: "Credits");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -371,9 +403,6 @@ namespace WebApplication4.Migrations
                 name: "DegreeCredits");
 
             migrationBuilder.DropTable(
-                name: "Slots");
-
-            migrationBuilder.DropTable(
                 name: "StudentTerms");
 
             migrationBuilder.DropTable(
@@ -383,13 +412,16 @@ namespace WebApplication4.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Degrees");
+                name: "Slots");
 
             migrationBuilder.DropTable(
                 name: "Credits");
 
             migrationBuilder.DropTable(
                 name: "DegreePlans");
+
+            migrationBuilder.DropTable(
+                name: "Degrees");
 
             migrationBuilder.DropTable(
                 name: "Students");

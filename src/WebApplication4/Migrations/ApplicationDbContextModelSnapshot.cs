@@ -198,7 +198,11 @@ namespace WebApplication4.Migrations
 
                     b.Property<int>("IsSummer");
 
+                    b.Property<int?>("SlotID");
+
                     b.HasKey("CreditID");
+
+                    b.HasIndex("SlotID");
 
                     b.ToTable("Credits");
                 });
@@ -239,6 +243,8 @@ namespace WebApplication4.Migrations
                 {
                     b.Property<int>("DegreePlanID");
 
+                    b.Property<int>("DegreeID");
+
                     b.Property<string>("DegreePlanAbbrev");
 
                     b.Property<string>("DegreePlanName");
@@ -246,6 +252,8 @@ namespace WebApplication4.Migrations
                     b.Property<int>("StudentID");
 
                     b.HasKey("DegreePlanID");
+
+                    b.HasIndex("DegreeID");
 
                     b.HasIndex("StudentID");
 
@@ -352,6 +360,13 @@ namespace WebApplication4.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("WebApplication4.Models.Credit", b =>
+                {
+                    b.HasOne("WebApplication4.Models.Slot")
+                        .WithMany("Credits")
+                        .HasForeignKey("SlotID");
+                });
+
             modelBuilder.Entity("WebApplication4.Models.DegreeCredit", b =>
                 {
                     b.HasOne("WebApplication4.Models.Credit", "Credit")
@@ -367,6 +382,11 @@ namespace WebApplication4.Migrations
 
             modelBuilder.Entity("WebApplication4.Models.DegreePlan", b =>
                 {
+                    b.HasOne("WebApplication4.Models.Degree", "Degree")
+                        .WithMany()
+                        .HasForeignKey("DegreeID")
+                        .OnDelete(DeleteBehavior.Cascade);
+
                     b.HasOne("WebApplication4.Models.Student", "Student")
                         .WithMany()
                         .HasForeignKey("StudentID")
