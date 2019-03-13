@@ -72,6 +72,28 @@ namespace WebApplication4.Data
                 }
                 context.SaveChanges();
             }
+            //This is for Students
+            if (context.Students.Any())
+            {
+                Console.WriteLine("Student Already exists:");
+            }
+            else
+            {
+                var students = new Student[]
+            {
+                new Student{StudentID = 533726 , Family = "Narne" , Given ="Sai Tejaswini", Snumber =533726 , number_919=919571565},
+                new Student{StudentID = 533490 , Family = "Gadekari" , Given ="Sonam", Snumber =533490 , number_919=919568899},
+                new Student{StudentID = 533711 , Family = "Naidu" , Given ="Harika", Snumber =533711 , number_919=919570594},
+           };
+                Console.WriteLine($"Inserted {students.Length} new students.");
+
+                foreach (Student d in students)
+                {
+                    context.Students.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //This section ends
 
             //This section ends: Credit
             //This section is for Harika: Degree Credit
@@ -166,6 +188,47 @@ namespace WebApplication4.Data
                 context.SaveChanges();
             }
             //This section ends
+           
+            //This section is for Sonam: StudentTerms.cs
+            if (context.StudentTerms.Any())
+            {
+                Console.WriteLine("StudentTerms Already exists:");
+            }
+            else
+            {
+                var studentterms = new StudentTerm[]
+            {
+                new StudentTerm{StudentTermID = 1 , StudentID = 533726 ,Term =1, TermAbbrev = "F19",  TermName ="Fall 2019" },
+                 new StudentTerm{StudentTermID = 2 , StudentID = 533726 ,Term =2, TermAbbrev = "S20",  TermName ="Spring 2020" },
+                 new StudentTerm{StudentTermID = 3 , StudentID = 533726 ,Term =3, TermAbbrev = "Su20",  TermName ="Summer 2020" },
+                 new StudentTerm{StudentTermID = 4 , StudentID = 533726 ,Term =4, TermAbbrev = "F20",  TermName ="Fall 2020" },
+                 new StudentTerm{StudentTermID = 5 , StudentID = 533726 ,Term =5, TermAbbrev = "S21",  TermName ="Spring 2021" },
+                 new StudentTerm{StudentTermID = 6 , StudentID = 533490 ,Term =1, TermAbbrev = "S19",  TermName ="Spring 2019" },
+                 new StudentTerm{StudentTermID = 7 , StudentID = 533490 ,Term =2, TermAbbrev = "Su19",  TermName ="Summer 2019" },
+                 new StudentTerm{StudentTermID = 8 , StudentID = 533490 ,Term =3, TermAbbrev = "F19",  TermName ="Fall 2019" },
+                 new StudentTerm{StudentTermID = 9 , StudentID = 533490 ,Term =4, TermAbbrev = "S20",  TermName ="Spring 2020" },
+                 new StudentTerm{StudentTermID = 10 , StudentID = 533490 ,Term =5, TermAbbrev = "Su20",  TermName ="Summer 2020" },
+                 new StudentTerm{StudentTermID = 11 , StudentID = 533490 ,Term =6, TermAbbrev = "F20",  TermName ="Fall 2020" },
+                 new StudentTerm{StudentTermID = 12 , StudentID = 533711 ,Term =1, TermAbbrev = "F18",  TermName ="Fall 2018" },
+                 new StudentTerm{StudentTermID = 13 , StudentID = 533711 ,Term =2, TermAbbrev = "S19",  TermName ="Spring 2019" },
+                 new StudentTerm{StudentTermID = 14 , StudentID = 533711 ,Term =3, TermAbbrev = "Su19",  TermName ="Summer 2019" },
+                 new StudentTerm{StudentTermID = 15 , StudentID = 533711 ,Term =4, TermAbbrev = "F19",  TermName ="Fall 2019" },
+                 new StudentTerm{StudentTermID = 16 , StudentID = 533711 ,Term =5, TermAbbrev = "S20",  TermName ="Spring 2020" },
+                 new StudentTerm{StudentTermID = 17 , StudentID = 533711 ,Term =6, TermAbbrev = "Su19",  TermName ="Summer 2020" },
+
+
+
+           };
+                Console.WriteLine($"Inserted {studentterms.Length} new studentTerms.");
+
+                foreach (StudentTerm d in studentterms)
+                {
+                    context.StudentTerms.Add(d);
+                }
+                context.SaveChanges();
+            }
+            //This section ends
+            //This section is for Sonam: Student.cs          
             //This section is for Sonam: Slot.cs
             if (context.Slots.Any())
             {
@@ -222,68 +285,6 @@ namespace WebApplication4.Data
                 context.SaveChanges();
             }
             //This section ends
-            //This section is for Sonam: StudentTerms.cs
-            if (context.StudentTerms.Any())
-            {
-                Console.WriteLine("StudentTerms Already exists:");
-            }
-            else
-            {
-                var studentterms = new StudentTerm[]
-            {
-                new StudentTerm{StudentTermID = 1 , StudentID = 533726 ,Term =1, TermAbbrev = "F19",  TermName ="Fall 2019" },
-                 new StudentTerm{StudentTermID = 2 , StudentID = 533726 ,Term =2, TermAbbrev = "S20",  TermName ="Spring 2020" },
-                 new StudentTerm{StudentTermID = 3 , StudentID = 533726 ,Term =3, TermAbbrev = "Su20",  TermName ="Summer 2020" },
-                 new StudentTerm{StudentTermID = 4 , StudentID = 533726 ,Term =4, TermAbbrev = "F20",  TermName ="Fall 2020" },
-                 new StudentTerm{StudentTermID = 5 , StudentID = 533726 ,Term =5, TermAbbrev = "S21",  TermName ="Spring 2021" },
-                 new StudentTerm{StudentTermID = 6 , StudentID = 533490 ,Term =1, TermAbbrev = "S19",  TermName ="Spring 2019" },
-                 new StudentTerm{StudentTermID = 7 , StudentID = 533490 ,Term =2, TermAbbrev = "Su19",  TermName ="Summer 2019" },
-                 new StudentTerm{StudentTermID = 8 , StudentID = 533490 ,Term =3, TermAbbrev = "F19",  TermName ="Fall 2019" },
-                 new StudentTerm{StudentTermID = 9 , StudentID = 533490 ,Term =4, TermAbbrev = "S20",  TermName ="Spring 2020" },
-                 new StudentTerm{StudentTermID = 10 , StudentID = 533490 ,Term =5, TermAbbrev = "Su20",  TermName ="Summer 2020" },
-                 new StudentTerm{StudentTermID = 11 , StudentID = 533490 ,Term =6, TermAbbrev = "F20",  TermName ="Fall 2020" },
-                 new StudentTerm{StudentTermID = 12 , StudentID = 533711 ,Term =1, TermAbbrev = "F18",  TermName ="Fall 2018" },
-                 new StudentTerm{StudentTermID = 13 , StudentID = 533711 ,Term =2, TermAbbrev = "S19",  TermName ="Spring 2019" },
-                 new StudentTerm{StudentTermID = 14 , StudentID = 533711 ,Term =3, TermAbbrev = "Su19",  TermName ="Summer 2019" },
-                 new StudentTerm{StudentTermID = 15 , StudentID = 533711 ,Term =4, TermAbbrev = "F19",  TermName ="Fall 2019" },
-                 new StudentTerm{StudentTermID = 16 , StudentID = 533711 ,Term =5, TermAbbrev = "S20",  TermName ="Spring 2020" },
-                 new StudentTerm{StudentTermID = 17 , StudentID = 533711 ,Term =6, TermAbbrev = "Su19",  TermName ="Summer 2020" },
-
-
-
-           };
-                Console.WriteLine($"Inserted {studentterms.Length} new studentTerms.");
-
-                foreach (StudentTerm d in studentterms)
-                {
-                    context.StudentTerms.Add(d);
-                }
-                context.SaveChanges();
-            }
-            //This section ends
-            //This section is for Sonam: Student.cs
-            if (context.Students.Any())
-            {
-                Console.WriteLine("Student Already exists:");
-            }
-            else
-            {
-                var students = new Student[]
-            {
-                new Student{StudentID = 533726 , Family = "Narne" , Given ="Sai Tejaswini", Snumber =533726 , number_919=919571565},
-                new Student{StudentID = 533490 , Family = "Gadekari" , Given ="Sonam", Snumber =533490 , number_919=919568899},
-                new Student{StudentID = 533711 , Family = "Naidu" , Given ="Harika", Snumber =533711 , number_919=919570594},
-           };
-                Console.WriteLine($"Inserted {students.Length} new students.");
-
-                foreach (Student d in students)
-                {
-                    context.Students.Add(d);
-                }
-                context.SaveChanges();
-            }
-            //This section ends
-
         }
     }
 }
