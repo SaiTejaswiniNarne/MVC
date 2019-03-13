@@ -11,13 +11,13 @@ namespace WebApplication4.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int DegreePlanID { get; set; }
-        public int StudentID { get; set; }
         [ForeignKey("StudentID")]
+        public int StudentID { get; set; }      
         public Student Student { get; set; }
         public String DegreePlanAbbrev { get; set; }
         public String DegreePlanName { get; set; }
-        public int DegreeID { get; set; }
         [ForeignKey("DegreeID")]
+        public int DegreeID { get; set; }
         public Degree Degree { get; set; }
 
     }
