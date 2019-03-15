@@ -10,7 +10,7 @@ using WebApplication4.Data;
 namespace WebApplication4.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190313214754_initDB")]
+    [Migration("20190315200857_initDB")]
     partial class initDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
