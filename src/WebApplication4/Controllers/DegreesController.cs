@@ -20,9 +20,28 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Degrees
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.Degrees.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            var Degrees = from s in _context.Degrees
+                          select s;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    Degrees = Degrees.OrderByDescending(s => s.DegreeName);
+                    break;
+                case "Date":
+                    Degrees = Degrees.OrderBy(s => s.DegreeID);
+                    break;
+                case "date_desc":
+                    Degrees = Degrees.OrderByDescending(s => s.DegreeAbbrev);
+                    break;
+                default:
+                    Degrees = Degrees.OrderBy(s => s.NumberOfTerms);
+                    break;
+            }
+            return View(await Degrees.AsNoTracking().ToListAsync());
         }
 
         // GET: Degrees/Details/5
