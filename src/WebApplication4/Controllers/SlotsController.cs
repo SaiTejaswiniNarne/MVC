@@ -20,27 +20,47 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Slots
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["StatusSortParm"] = String.IsNullOrEmpty(sortOrder) ? "status_desc" : "";
+            ViewData["CreditSortParm"] = sortOrder == "Credits" ? "credit_desc" : "Credits";
+            ViewData["TermsSortParm"] = sortOrder == "Terms" ? "term_desc" : "Term";
+            ViewData["DegreePlanParm"] = sortOrder == "DegreePlans" ? "degreeplan_desc" : "Degreeplan";
+
+            ViewData["CurrentFilter"] = searchString;
             var slots = from s in _context.Slots
                         select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                slots = slots.Where(s => s.Term.ToString().Contains(searchString)
+                                 || s.CreditID.ToString().Contains(searchString));
+            }
             switch (sortOrder)
             {
-                case "name_desc":
+                case "status_desc":
+                    slots = slots.OrderByDescending(s => s.Status);
+                    break;
+                case "credit_desc":
+                    slots = slots.OrderBy(s => s.CreditID);
+                    break;
+                case "term_desc":
                     slots = slots.OrderByDescending(s => s.Term);
                     break;
-                case "Date":
-                    slots = slots.OrderBy(s => s.Status);
+                case "Credits":
+                    slots = slots.OrderBy(s => s.CreditID);
                     break;
-                case "date_desc":
+                case "Term":
+                    slots = slots.OrderByDescending(s => s.Term);
+                    break;
+                case "DegreePlan":
                     slots = slots.OrderByDescending(s => s.DegreePlan);
                     break;
                 default:
-                    slots = slots.OrderBy(s => s.Credit);
+                    slots = slots.OrderBy(s => s.SlotID);
                     break;
             }
+            //  var applicationDbContext = _context.Slots.Include(s => s.SlotId).Include(s => s.DegreePlan);
+            //return View(await applicationDbContext.ToListAsync());
             return View(await slots.AsNoTracking().ToListAsync());
         }
 
