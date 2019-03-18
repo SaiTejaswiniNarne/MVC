@@ -20,10 +20,28 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Slots
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var applicationDbContext = _context.Slots.Include(s => s.Credit).Include(s => s.DegreePlan);
-            return View(await applicationDbContext.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            var slots = from s in _context.Slots
+                        select s;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    slots = slots.OrderByDescending(s => s.Term);
+                    break;
+                case "Date":
+                    slots = slots.OrderBy(s => s.Status);
+                    break;
+                case "date_desc":
+                    slots = slots.OrderByDescending(s => s.DegreePlan);
+                    break;
+                default:
+                    slots = slots.OrderBy(s => s.Credit);
+                    break;
+            }
+            return View(await slots.AsNoTracking().ToListAsync());
         }
 
         // GET: Slots/Details/5

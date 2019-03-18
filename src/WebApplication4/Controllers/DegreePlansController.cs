@@ -20,10 +20,26 @@ namespace WebApplication4.Controllers
         }
 
         // GET: DegreePlans
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            var applicationDbContext = _context.DegreePlans.Include(d => d.Student);
-            return View(await applicationDbContext.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            var degreePlans = from s in _context.DegreePlans
+                              select s;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    degreePlans = degreePlans.OrderByDescending(s => s.DegreePlanAbbrev);
+                    break;
+                
+                case "date_desc":
+                    degreePlans = degreePlans.OrderByDescending(s => s.DegreePlanName);
+                    break;
+                default:
+                    degreePlans = degreePlans.OrderBy(s => s.Student);
+                    break;
+            }
+            return View(await degreePlans.AsNoTracking().ToListAsync());
         }
 
         // GET: DegreePlans/Details/5

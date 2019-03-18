@@ -19,14 +19,14 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DegreePlanAbbrev)
-            </th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.DegreePlanAbbrev)</a>
+</th>
             <th>
-                @Html.DisplayNameFor(model => model.DegreePlanName)
-            </th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.DegreePlanName)</a>
+</th>
             <th>
-                @Html.DisplayNameFor(model => model.Student)
-            </th>
+                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Student)</a>
+</th>
             <th></th>
         </tr>
     </thead>
