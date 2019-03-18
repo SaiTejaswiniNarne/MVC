@@ -20,9 +20,32 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Credits
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.Credits.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["DateSortParm"] = sortOrder == "Date1" ? "date_desc1" : "Date1";
+            var credits = from s in _context.Credits
+                          select s;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    credits = credits.OrderByDescending(s => s.CreditAbbrev);
+                    break;
+                case "Date":
+                    credits = credits.OrderBy(s => s.CreditName);
+                    break;
+                case "date_desc":
+                    credits = credits.OrderByDescending(s => s.IsSummer);
+                    break;
+                case "date_desc1":
+                    credits = credits.OrderByDescending(s => s.IsSpring);
+                    break;
+                default:
+                    credits = credits.OrderBy(s => s.IsFall);
+                    break;
+            }
+            return View(await credits.AsNoTracking().ToListAsync());
         }
 
         // GET: Credits/Details/5

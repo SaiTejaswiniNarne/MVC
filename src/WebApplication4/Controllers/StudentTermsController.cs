@@ -20,9 +20,28 @@ namespace WebApplication4.Controllers
         }
 
         // GET: StudentTerms
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder)
         {
-            return View(await _context.StudentTerms.ToListAsync());
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            var studentTerms = from s in _context.StudentTerms
+                               select s;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    studentTerms = studentTerms.OrderByDescending(s => s.StudentID);
+                    break;
+                case "Date":
+                    studentTerms = studentTerms.OrderBy(s => s.Term);
+                    break;
+                case "date_desc":
+                    studentTerms = studentTerms.OrderByDescending(s => s.TermAbbrev);
+                    break;
+                default:
+                    studentTerms = studentTerms.OrderBy(s => s.TermName);
+                    break;
+            }
+            return View(await studentTerms.AsNoTracking().ToListAsync());
         }
 
         // GET: StudentTerms/Details/5
