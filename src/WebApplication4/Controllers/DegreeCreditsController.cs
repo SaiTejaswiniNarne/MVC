@@ -20,11 +20,40 @@ namespace WebApplication4.Controllers
         }
 
         // GET: DegreeCredits
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            var applicationDbContext = _context.DegreeCredits.Include(d => d.Credit).Include(d => d.Degree);
-            return View(await applicationDbContext.ToListAsync());
+            ViewData["DegreeIDParm"] = String.IsNullOrEmpty(sortOrder) ? "DegreeID_desc" : "";
+            ViewData["RequirementIDParm"] = sortOrder == "RequirementID" ? "RequirementID_desc" : "RequirementID";
+            ViewData["CurrentFilter"] = searchString;
+            var degreereq = from s in _context.DegreeCredits
+                            select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                degreereq = degreereq.Where(s => s.DegreeID.ToString().Contains(searchString)
+                                       || s.CreditID.ToString().Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "DegreeID_desc":
+                    degreereq = degreereq.OrderByDescending(s => s.DegreeID);
+                    break;
+
+                case "RequirementID":
+                    degreereq = degreereq.OrderBy(s => s.CreditID);
+                    break;
+                case "RequirementID_desc":
+                    degreereq = degreereq.OrderByDescending(s => s.CreditID);
+                    break;
+                default:
+                    degreereq = degreereq.OrderBy(s => s.DegreeCreditID);
+                    break;
+            }
+
+            return View(await degreereq.AsNoTracking().ToListAsync());
         }
+
 
         // GET: DegreeCredits/Details/5
         public async Task<IActionResult> Details(int? id)
