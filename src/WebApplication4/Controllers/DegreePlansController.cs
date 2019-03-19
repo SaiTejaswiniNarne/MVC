@@ -31,7 +31,7 @@ namespace WebApplication4.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 degreeplans = degreeplans.Where(s => s.DegreePlanAbbrev.Contains(searchString)
-                                       || s.DegreePlanName.Contains(searchString));
+                                       || s.DegreePlanName.Contains(searchString) || s.Student.ToString().Contains(searchString)); 
             }
             switch (sortOrder)
             {
