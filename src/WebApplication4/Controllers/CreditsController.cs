@@ -20,13 +20,19 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Credits
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
             ViewData["DateSortParm"] = sortOrder == "Date1" ? "date_desc1" : "Date1";
+            ViewData["CurrentFilter"] = searchString;
             var credits = from s in _context.Credits
                           select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                credits = credits.Where(s => s.CreditAbbrev.Contains(searchString)
+                                       || s.CreditName.Contains(searchString));
+            }
             switch (sortOrder)
             {
                 case "name_desc":
