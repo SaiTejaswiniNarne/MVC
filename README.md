@@ -38,3 +38,6 @@ Estimated hours-->
 
 Cost=billing rate* total hours.
 
+
+Link for the Issues
+https://github.com/SaiTejaswiniNarne/MVC/issues?q=is%3Aissue+is%3Aclosed
