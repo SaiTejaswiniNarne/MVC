@@ -20,8 +20,8 @@ Narne Sai Tejaswini
 <p>Summer with 2 courses</p>
 
 
-takehome |multiplier| billing rate | Estimated hours  per week| developers| Cost
-30       | 2.5      | 60           | 6                        | 3         |  5400
+|takehome |multiplier| billing rate | Estimated hours  per week| developers| Cost    |
+|30       | 2.5      | 60           | 6                        | 3         |  5400   \||
 
 
 takehome-->30/hr
