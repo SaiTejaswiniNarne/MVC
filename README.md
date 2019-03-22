@@ -20,7 +20,7 @@ Narne Sai Tejaswini
 <p>Summer with 2 courses</p>
 
 
-Column 1 | Column 2 | Column 3
+takehome | Column 2 | Column 3
 --- | --- | ---
 **Things** | _Don't_ | [Need](http://makeuseof.com)
 To | *__Look__* | `Pretty`
