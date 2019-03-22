@@ -20,3 +20,17 @@ Narne Sai Tejaswini
 <p>Summer with 2 courses</p>
 
 
+Column 1 | Column 2 | Column 3
+--- | --- | ---
+**Things** | _Don't_ | [Need](http://makeuseof.com)
+To | *__Look__* | `Pretty`
+
+30/hr==>takehome
+2.5 to 3.0==>multiplier
+choose a multiplier
+2*30==>60 $/hr==>billing rate
+Estimated hours==>
+6 hrs/week *4 wks* 3 developers
+
+Cost=billing rate* total hours.
+
