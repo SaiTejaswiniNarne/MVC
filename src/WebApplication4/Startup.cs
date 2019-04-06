@@ -35,12 +35,23 @@ namespace WebApplication4
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            /*     services.AddDbContext<ApplicationDbContext>(options =>
+                     options.UseSqlServer(
+                         Configuration.GetConnectionString("DefaultConnection")));
+             */
+
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Production")
+                services.AddDbContext<ApplicationDbContext>(options =>
+                        options.UseSqlServer(Configuration.GetConnectionString("MyDbConnection")));
+            else
+                services.AddDbContext<ApplicationDbContext>(options =>
+                        options.UseSqlServer("Data Source=localdatabase.db"));
             services.AddDefaultIdentity<IdentityUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                 .AddDefaultUI(UIFramework.Bootstrap4)
+                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            // Automatically perform database migration
+            services.BuildServiceProvider().GetService<ApplicationDbContext>().Database.Migrate();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
