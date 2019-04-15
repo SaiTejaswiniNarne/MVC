@@ -5860,11 +5860,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\S533490\\Documents\\44663\\MVC\\tests\\UnitTests\\UnitTests.csproj",
+      "projectUniqueName": "C:\\Users\\S533490\\Desktop\\MVC\\src\\tests\\UnitTests\\UnitTests.csproj",
       "projectName": "UnitTests",
-      "projectPath": "C:\\Users\\S533490\\Documents\\44663\\MVC\\tests\\UnitTests\\UnitTests.csproj",
+      "projectPath": "C:\\Users\\S533490\\Desktop\\MVC\\src\\tests\\UnitTests\\UnitTests.csproj",
       "packagesPath": "C:\\Users\\S533490\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\S533490\\Documents\\44663\\MVC\\tests\\UnitTests\\obj\\",
+      "outputPath": "C:\\Users\\S533490\\Desktop\\MVC\\src\\tests\\UnitTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "c:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

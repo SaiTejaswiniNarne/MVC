@@ -5860,11 +5860,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\S533490\\Documents\\44663\\MVC\\tests\\FunctionalTests\\FunctionalTests.csproj",
+      "projectUniqueName": "C:\\Users\\S533490\\Desktop\\MVC\\src\\tests\\FunctionalTests\\FunctionalTests.csproj",
       "projectName": "FunctionalTests",
-      "projectPath": "C:\\Users\\S533490\\Documents\\44663\\MVC\\tests\\FunctionalTests\\FunctionalTests.csproj",
+      "projectPath": "C:\\Users\\S533490\\Desktop\\MVC\\src\\tests\\FunctionalTests\\FunctionalTests.csproj",
       "packagesPath": "C:\\Users\\S533490\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\S533490\\Documents\\44663\\MVC\\tests\\FunctionalTests\\obj\\",
+      "outputPath": "C:\\Users\\S533490\\Desktop\\MVC\\src\\tests\\FunctionalTests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "c:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
