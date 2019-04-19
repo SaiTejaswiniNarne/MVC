@@ -38,6 +38,9 @@ namespace WebApplication4.Data
             modelBuilder.Entity<Slot>().ToTable("Slots");
 
         }
+               
+
+        public DbSet<WebApplication4.Models.DegreeRequirement> DegreeRequirement { get; set; }
 
 
     }
