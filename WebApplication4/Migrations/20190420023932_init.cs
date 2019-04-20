@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApplication4.Migrations
 {
-    public partial class Initial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -239,6 +239,27 @@ namespace WebApplication4.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DegreeRequirement",
+                columns: table => new
+                {
+                    DegreeRequirementId = table.Column<int>(nullable: false),
+                    DegreeId = table.Column<int>(nullable: false),
+                    RequirementNumber = table.Column<int>(nullable: false),
+                    RequirementAbbrev = table.Column<string>(maxLength: 10, nullable: false),
+                    RequirementName = table.Column<string>(maxLength: 60, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DegreeRequirement", x => x.DegreeRequirementId);
+                    table.ForeignKey(
+                        name: "FK_DegreeRequirement_Degrees_DegreeId",
+                        column: x => x.DegreeId,
+                        principalTable: "Degrees",
+                        principalColumn: "DegreeID",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "DegreePlans",
                 columns: table => new
                 {
@@ -340,6 +361,11 @@ namespace WebApplication4.Migrations
                 column: "StudentID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DegreeRequirement_DegreeId",
+                table: "DegreeRequirement",
+                column: "DegreeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Slots_CreditID",
                 table: "Slots",
                 column: "CreditID");
@@ -369,6 +395,9 @@ namespace WebApplication4.Migrations
 
             migrationBuilder.DropTable(
                 name: "DegreeCredits");
+
+            migrationBuilder.DropTable(
+                name: "DegreeRequirement");
 
             migrationBuilder.DropTable(
                 name: "Slots");

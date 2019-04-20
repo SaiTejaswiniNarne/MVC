@@ -10,8 +10,8 @@ using WebApplication4.Data;
 namespace WebApplication4.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190415203203_Initial")]
-    partial class Initial
+    [Migration("20190420023932_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -254,6 +254,29 @@ namespace WebApplication4.Migrations
                     b.ToTable("DegreePlans");
                 });
 
+            modelBuilder.Entity("WebApplication4.Models.DegreeRequirement", b =>
+                {
+                    b.Property<int>("DegreeRequirementId");
+
+                    b.Property<int>("DegreeId");
+
+                    b.Property<string>("RequirementAbbrev")
+                        .IsRequired()
+                        .HasMaxLength(10);
+
+                    b.Property<string>("RequirementName")
+                        .IsRequired()
+                        .HasMaxLength(60);
+
+                    b.Property<int>("RequirementNumber");
+
+                    b.HasKey("DegreeRequirementId");
+
+                    b.HasIndex("DegreeId");
+
+                    b.ToTable("DegreeRequirement");
+                });
+
             modelBuilder.Entity("WebApplication4.Models.Slot", b =>
                 {
                     b.Property<int>("SlotID");
@@ -372,6 +395,14 @@ namespace WebApplication4.Migrations
                     b.HasOne("WebApplication4.Models.Student", "Student")
                         .WithMany()
                         .HasForeignKey("StudentID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("WebApplication4.Models.DegreeRequirement", b =>
+                {
+                    b.HasOne("WebApplication4.Models.Degree", "Degree")
+                        .WithMany("DegreeRequirements")
+                        .HasForeignKey("DegreeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
