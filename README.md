@@ -53,3 +53,5 @@ Link To Team Slide:
 Link to the Commits History(Contributions):
 https://github.com/SaiTejaswiniNarne/MVC/graphs/contributors
 
+Link to the Issues:
+https://github.com/SaiTejaswiniNarne/MVC/issues
