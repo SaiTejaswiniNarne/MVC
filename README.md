@@ -1,6 +1,6 @@
 # MVC
 
-Team Members:
+Team Members/ Developers
 Gadekari Sonam
 Naidu Harika
 Narne Sai Tejaswini
@@ -41,3 +41,8 @@ Cost=billing rate* total hours.
 
 Link for the Issues
 https://github.com/SaiTejaswiniNarne/MVC/issues?q=is%3Aissue+is%3Aclosed
+
+
+Link To the Repository:
+https://github.com/SaiTejaswiniNarne/MVC
+
