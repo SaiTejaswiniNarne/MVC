@@ -65,4 +65,11 @@ Credits Create:
 Degree Credits:
 ![Degree Credits](https://user-images.githubusercontent.com/42949313/56475419-a2e9c700-644d-11e9-9572-2e219a537bd1.PNG)
 Degree Credits Create:
-![Degree Credits](https://user-images.githubusercontent.com/42949313/56475419-a2e9c700-644d-11e9-9572-2e219a537bd1.PNG)
+![Degree Credits Add](https://user-images.githubusercontent.com/42949313/56475421-a8dfa800-644d-11e9-83eb-d9d9250dc8be.PNG)
+
+Degree Plan:
+![Degree Plan](https://user-images.githubusercontent.com/42949313/56475441-ef350700-644d-11e9-9bf0-460ddf3a1470.PNG)
+Degree Plam Credit:
+![Degree Plan Add](https://user-images.githubusercontent.com/42949313/56475445-f5c37e80-644d-11e9-9bb4-3ba104399a47.PNG)
+
+
