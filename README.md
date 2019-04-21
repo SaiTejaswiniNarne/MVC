@@ -55,3 +55,9 @@ https://github.com/SaiTejaswiniNarne/MVC/graphs/contributors
 
 Link to the Issues:
 https://github.com/SaiTejaswiniNarne/MVC/issues
+
+
+Credits Running:
+![Credits](https://user-images.githubusercontent.com/42949313/56475388-2fe05080-644d-11e9-92bf-d4fb3c0fd4fa.PNG)
+Credits Create:
+![CreditAdd](https://user-images.githubusercontent.com/42949313/56475396-59997780-644d-11e9-914f-c3e3ac9d3088.PNG)
