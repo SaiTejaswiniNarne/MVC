@@ -46,3 +46,5 @@ https://github.com/SaiTejaswiniNarne/MVC/issues?q=is%3Aissue+is%3Aclosed
 Link To the Repository:
 https://github.com/SaiTejaswiniNarne/MVC
 
+Link To Team Slide:
+![image](https://user-images.githubusercontent.com/42949313/56475016-1983c600-6448-11e9-8983-806de5933526.png)
