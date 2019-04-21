@@ -48,3 +48,8 @@ https://github.com/SaiTejaswiniNarne/MVC
 
 Link To Team Slide:
 ![image](https://user-images.githubusercontent.com/42949313/56475016-1983c600-6448-11e9-8983-806de5933526.png)
+
+
+Link to the Commits History(Contributions):
+https://github.com/SaiTejaswiniNarne/MVC/graphs/contributors
+
