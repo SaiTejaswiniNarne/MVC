@@ -61,3 +61,8 @@ Credits Running:
 ![Credits](https://user-images.githubusercontent.com/42949313/56475388-2fe05080-644d-11e9-92bf-d4fb3c0fd4fa.PNG)
 Credits Create:
 ![CreditAdd](https://user-images.githubusercontent.com/42949313/56475396-59997780-644d-11e9-914f-c3e3ac9d3088.PNG)
+
+Degree Credits:
+![Degree Credits](https://user-images.githubusercontent.com/42949313/56475419-a2e9c700-644d-11e9-9572-2e219a537bd1.PNG)
+Degree Credits Create:
+![Degree Credits](https://user-images.githubusercontent.com/42949313/56475419-a2e9c700-644d-11e9-9572-2e219a537bd1.PNG)
