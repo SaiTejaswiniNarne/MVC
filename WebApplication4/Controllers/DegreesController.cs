@@ -20,12 +20,20 @@ namespace WebApplication4.Controllers
         }
 
         // GET: Degrees
-        public async Task<IActionResult> Index(string sortOrder)
+        public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewData["CurrentFilter"] = searchString;
             var Degrees = from s in _context.Degrees
                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Degrees = Degrees.Where(d => d.DegreeAbbrev.Contains(searchString)
+                                       || d.DegreeName.Contains(searchString));
+            }
+
             switch (sortOrder)
             {
                 case "name_desc":
