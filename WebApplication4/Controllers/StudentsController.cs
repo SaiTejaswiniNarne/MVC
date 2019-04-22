@@ -60,7 +60,8 @@ namespace WebApplication4.Controllers
             }
 
             var student = await _context.Students
-                .FirstOrDefaultAsync(m => m.StudentID == id);
+                .Include(d => d.DegreePlans)
+                .SingleOrDefaultAsync(m => m.StudentID == id);
             if (student == null)
             {
                 return NotFound();

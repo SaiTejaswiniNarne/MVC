@@ -42,12 +42,12 @@
                     <th>Abbrev</th>
                     <th>Requirement Name</th>
                 </tr>
-                @foreach (var item in Model.DegreeRequirements.OrderBy(r => r.RequirementNumber))
+                @foreach (var item in Model.DegreeCredits.OrderBy(r => r.CreditID))
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.RequirementNumber) </td>
-                        <td>@Html.DisplayFor(modelItem => item.RequirementAbbrev) </td>
-                        <td>@Html.DisplayFor(modelItem => item.RequirementName)   </td>
+                        <td>@Html.DisplayFor(modelItem => item.CreditID) </td>
+                        <td>@Html.DisplayFor(modelItem => item.DegreeID) </td>
+                       
                     </tr>
                 }
             </table>

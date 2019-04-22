@@ -18,6 +18,17 @@ namespace WebApplication4.Models
         public string Given { get;  set; }
         public int Snumber { get; set; }
         public int number_919 { get; set; }
+        public ICollection<DegreePlan> DegreePlans { get; set; }
+
+        public override string ToString()
+        {
+            return base.ToString() + ": " +
+              "StudentId = " + StudentID +
+              "GivenName = " + Given +
+              ", FamilyName = " + Family +
+              "";
+        }
+
 
     }
 }

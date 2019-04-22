@@ -1,7 +1,7 @@
 ﻿@model WebApplication4.Models.Student
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Details";
 }
 
 <!DOCTYPE html>
@@ -17,29 +17,47 @@
     <h4>Student</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Family)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Family)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Given)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Given)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Snumber)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Snumber)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.number_919)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.number_919)
+        </dd>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Number</th>
+                    <th>Abbrev</th>
+                    <th>Requirement Name</th>
+                </tr>
+                @foreach (var item in Model.DegreePlans.OrderBy(r => r.DegreePlanID))
+                {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.DegreePlanID) </td>
+                    <td>@Html.DisplayFor(modelItem => item.StudentID) </td>
+                    <td>@Html.DisplayFor(modelItem => item.DegreePlanAbbrev)   </td>
+                    <td>@Html.DisplayFor(modelItem => item.DegreePlanName)   </td>
+                </tr>
+                }
+            </table>
         </dd>
     </dl>
 </div>

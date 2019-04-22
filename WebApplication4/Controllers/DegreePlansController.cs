@@ -63,11 +63,12 @@ namespace WebApplication4.Controllers
             }
 
             var degreePlan = await _context.DegreePlans
+                .Include(d => d.Degree)
                 .Include(d => d.Student)
                 .FirstOrDefaultAsync(m => m.DegreePlanID == id);
             if (degreePlan == null)
             {
-                return NotFound();
+                return NotFound(); 
             }
 
             return View(degreePlan);

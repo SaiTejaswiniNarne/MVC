@@ -16,7 +16,7 @@ namespace WebApplication4.Models
         public string DegreeAbbrev { get; set; }
         public string DegreeName { get; set; }
         public int NumberOfTerms { get; set; }
-        public ICollection<DegreeRequirement> DegreeRequirements { get; set; }
+        public ICollection<DegreeCredit> DegreeCredits { get; set; }
 
         public override string ToString()
         {

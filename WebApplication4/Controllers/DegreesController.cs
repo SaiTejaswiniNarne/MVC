@@ -61,6 +61,7 @@ namespace WebApplication4.Controllers
             }
 
             var degree = await _context.Degrees
+                .Include(d => d.DegreeCredits)
                 .FirstOrDefaultAsync(m => m.DegreeID == id);
             if (degree == null)
             {
