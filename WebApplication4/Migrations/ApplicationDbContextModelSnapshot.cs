@@ -382,7 +382,7 @@ namespace WebApplication4.Migrations
             modelBuilder.Entity("WebApplication4.Models.DegreeCredit", b =>
                 {
                     b.HasOne("WebApplication4.Models.Credit", "Credit")
-                        .WithMany()
+                        .WithMany("DegreeCredits")
                         .HasForeignKey("CreditID")
                         .OnDelete(DeleteBehavior.Cascade);
 

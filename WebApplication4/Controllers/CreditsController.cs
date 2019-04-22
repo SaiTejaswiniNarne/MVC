@@ -63,7 +63,8 @@ namespace WebApplication4.Controllers
             }
 
             var credit = await _context.Credits
-                .FirstOrDefaultAsync(m => m.CreditID == id);
+                .Include(d => d.DegreeCredits)
+                .SingleOrDefaultAsync(m => m.CreditID == id);           
             if (credit == null)
             {
                 return NotFound();

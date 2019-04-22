@@ -18,5 +18,14 @@ namespace WebApplication4.Models
         public int IsSummer { get; set; }
         public int IsSpring { get; set; }
         public int IsFall   { get; set; }
+        public ICollection<DegreeCredit> DegreeCredits { get; set; }
+        public override string ToString()
+        {
+            return base.ToString() + ": " +
+              "CreditId = " + CreditID +
+              ", CreditAbbrev = " + CreditAbbrev +
+              ", CreditName = " + CreditName +
+              "";
+        }
     }
 }

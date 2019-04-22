@@ -10,7 +10,7 @@ using WebApplication4.Data;
 namespace WebApplication4.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190422221004_initDB")]
+    [Migration("20190422222647_initDB")]
     partial class initDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -384,7 +384,7 @@ namespace WebApplication4.Migrations
             modelBuilder.Entity("WebApplication4.Models.DegreeCredit", b =>
                 {
                     b.HasOne("WebApplication4.Models.Credit", "Credit")
-                        .WithMany()
+                        .WithMany("DegreeCredits")
                         .HasForeignKey("CreditID")
                         .OnDelete(DeleteBehavior.Cascade);
 
