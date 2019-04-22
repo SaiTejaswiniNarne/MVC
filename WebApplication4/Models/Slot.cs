@@ -22,8 +22,16 @@ namespace WebApplication4.Models
 
         public Credit Credit { get; set; }
         public string Status { get; set; }
-        
-       
+
+        public override string ToString()
+        {
+            return base.ToString() + ": " +
+              "SlotID = " + SlotID +
+              "DegreePlanID = " + DegreePlanID +
+              ", DegreePlan = " + DegreePlan +
+              "";
+        }
+
         //public ICollection<Credit> Credits { get; set; }
     }
 }

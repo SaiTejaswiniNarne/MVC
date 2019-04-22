@@ -43,15 +43,6 @@
                         <th>CreditID</th>
                         <th>Status</th>
                     </tr>
-                    @foreach (var item in Model.Slots.OrderBy(r => r.SlotID))
-                    {
-                        <tr>
-                            <td>@Html.DisplayFor(modelItem => item.DegreePlanID) </td>
-                            <td>@Html.DisplayFor(modelItem => item.Term) </td>
-                            <td>@Html.DisplayFor(modelItem => item.CreditID)   </td>
-                            <td>@Html.DisplayFor(modelItem => item.Status)   </td>
-                        </tr>
-                    }
                 </table>
             </dd>
         </dl>

@@ -24,20 +24,5 @@ namespace WebApplication4.Models
 
         public ICollection<Slot> Slots { get; set; }
 
-        public override string ToString()
-        {
-            return base.ToString() + ": " +
-              "StudentDegreePlanID = " + DegreePlanID +
-              "StudentID = " + StudentID +
-              ", DegreeID = " + DegreePlanID +
-              ", PlanAbbrev = " + DegreePlanAbbrev +
-              ", PlanName = " + DegreePlanName +
-              ", Slot ={" + Slots.ToString() + "}" +
-              ", Student ={" + Student.ToString() +
-                            "}, Degree = {" + Degree.ToString() +
-                           "}";
-
-        }
-
     }
 }
