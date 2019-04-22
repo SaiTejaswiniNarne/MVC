@@ -4,6 +4,22 @@ Gadekari Sonam
 Naidu Harika
 Narne Sai Tejaswini
 
+Getting Started
+Recommended: Visual Studio 2017 Community
+
+Run Build / Build Solution and make sure the project compiles.
+
+Go to Tools / NuGet Package Manager / Package Manager Console.
+
+To add migrations use the following commands
+
+add-migration initial
+Using Package Manager Console: Add-Migration [migrationname]
+
+If the SQL Server LocalDB 'MyDegree' is not already available, then execute the migration scripts with:
+
+update-database
+Using Package Manager Console: Update-Migration
 
 <p>Sai Tejaswini Narne  </p>
 <p>My plan is on the Fall 2019: </p>
