@@ -1,39 +1,43 @@
 # MVC
-Team Members/ Developers
-Gadekari Sonam
-Naidu Harika
-Narne Sai Tejaswini
+<h1>Team Members/ Developers</h1>
+<p>Gadekari Sonam</p>
+<p>Naidu Harika</p>
+<p>Narne Sai Tejaswini</p>
 
-Getting Started
-Recommended: Visual Studio 2017 Community
+<h1>Getting Started</h1>
+<p>Recommended: Visual Studio 2017 Community</p>
 
-Run Build / Build Solution and make sure the project compiles.
+<p>Run Build / Build Solution and make sure the project compiles.</p>
 
-Go to Tools / NuGet Package Manager / Package Manager Console.
+<p>Go to Tools / NuGet Package Manager / Package Manager Console.</p>
 
-To add migrations use the following commands
+<p>To add migrations use the following commands</p>
 
-add-migration initial
-Using Package Manager Console: Add-Migration [migrationname]
+<p>add-migration initial</p>
+<p>Using Package Manager Console: Add-Migration [migrationname]</p>
 
-If the SQL Server LocalDB 'MyDegree' is not already available, then execute the migration scripts with:
+<p>If the SQL Server LocalDB 'MyDegree' is not already available, then execute the migration scripts with:</p>
 
-update-database
-Using Package Manager Console: Update-Migration
+<p>update-database</p>
+<p>Using Package Manager Console: Update-Migration</p>
+<h1>Commands</h1>
+<p>To restore the dependencies and tools: dotnet restore</p>
+<p>Build project & dependencies into set of binary files :dotnet build</p>
+<p>To execute the project :dotnet run</p>
 
-<p>Sai Tejaswini Narne  </p>
+<p><b>Sai Tejaswini Narne</b></p>
 <p>My plan is on the Fall 2019: </p>
 <p>Summer with 2 courses</p>
 <p>No summer courses</p>
 
 
-<p>Sonam Gadekari</p>
+<p><b>Sonam Gadekari</b></p>
 <p>Degree Plan is on the Spring 2019:</p>
 <p>Summer with no courses</p>
 <p>Summer with 2 courses<p>
 
 
-<p>Harika Naidu</p>
+<p><b>Harika Naidu</b></p>
 <p>My plan is on the Fall 2018:</p>
 <p>Summer with no courses</p>
 <p>Summer with 2 courses</p>
@@ -53,6 +57,21 @@ Estimated hours-->
 6 hrs/week *4 wks* 3 Developers
 
 Cost = Billing rate* Total hours.
+
+Deployment:
+Resource group name: ResourceGroup
+Free Location: "West Europe"
+Azure deployment user-name: team06group
+AppServicePlan Name is : AppServicePlan
+app name: AppUsingDotnetMVC
+git commands to push to cloud repoitory:
+git add .
+git commit -m "connect to SQLDB in Azure"
+git remote add azure https://AppDotnetMVC@appusingdotnetmvc.scm.azurewebsites.net/AppUsingDotnetMVC.git
+git push azure master
+
+git is configured with url:
+https://AppDotnetMVC@appusingdotnetmvc.scm.azurewebsites.net/AppUsingDotnetMVC.git
 
 Link for the Issues
 https://github.com/SaiTejaswiniNarne/MVC/issues?q=is%3Aissue+is%3Aclosed
