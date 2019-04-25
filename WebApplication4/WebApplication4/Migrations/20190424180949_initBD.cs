@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApplication4.Migrations
 {
-    public partial class initDB : Migration
+    public partial class initBD : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
