@@ -52,8 +52,8 @@ namespace WebApplication4.Migrations
                 columns: table => new
                 {
                     CreditID = table.Column<int>(nullable: false),
-                    CreditAbbrev = table.Column<string>(nullable: true),
-                    CreditName = table.Column<string>(nullable: true),
+                    CreditAbbrev = table.Column<string>(maxLength: 50, nullable: true),
+                    CreditName = table.Column<string>(maxLength: 50, nullable: true),
                     IsSummer = table.Column<int>(nullable: false),
                     IsSpring = table.Column<int>(nullable: false),
                     IsFall = table.Column<int>(nullable: false)
@@ -68,8 +68,8 @@ namespace WebApplication4.Migrations
                 columns: table => new
                 {
                     DegreeID = table.Column<int>(nullable: false),
-                    DegreeAbbrev = table.Column<string>(nullable: true),
-                    DegreeName = table.Column<string>(nullable: true),
+                    DegreeAbbrev = table.Column<string>(maxLength: 50, nullable: true),
+                    DegreeName = table.Column<string>(maxLength: 50, nullable: true),
                     NumberOfTerms = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -82,8 +82,8 @@ namespace WebApplication4.Migrations
                 columns: table => new
                 {
                     StudentID = table.Column<int>(nullable: false),
-                    Family = table.Column<string>(nullable: true),
-                    Given = table.Column<string>(nullable: true),
+                    Family = table.Column<string>(maxLength: 50, nullable: true),
+                    Given = table.Column<string>(maxLength: 50, nullable: true),
                     Snumber = table.Column<int>(nullable: false),
                     number_919 = table.Column<int>(nullable: false)
                 },
@@ -99,8 +99,8 @@ namespace WebApplication4.Migrations
                     StudentTermID = table.Column<int>(nullable: false),
                     StudentID = table.Column<int>(nullable: false),
                     Term = table.Column<int>(nullable: false),
-                    TermAbbrev = table.Column<string>(nullable: true),
-                    TermName = table.Column<string>(nullable: true)
+                    TermAbbrev = table.Column<string>(maxLength: 50, nullable: true),
+                    TermName = table.Column<string>(maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -265,8 +265,8 @@ namespace WebApplication4.Migrations
                 {
                     DegreePlanID = table.Column<int>(nullable: false),
                     StudentID = table.Column<int>(nullable: false),
-                    DegreePlanAbbrev = table.Column<string>(nullable: true),
-                    DegreePlanName = table.Column<string>(nullable: true),
+                    DegreePlanAbbrev = table.Column<string>(maxLength: 50, nullable: true),
+                    DegreePlanName = table.Column<string>(maxLength: 50, nullable: true),
                     DegreeID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -294,7 +294,7 @@ namespace WebApplication4.Migrations
                     DegreePlanID = table.Column<int>(nullable: false),
                     Term = table.Column<int>(nullable: false),
                     CreditID = table.Column<int>(nullable: false),
-                    Status = table.Column<string>(nullable: true)
+                    Status = table.Column<string>(maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {

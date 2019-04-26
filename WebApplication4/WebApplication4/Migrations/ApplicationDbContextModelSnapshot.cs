@@ -188,9 +188,11 @@ namespace WebApplication4.Migrations
                 {
                     b.Property<int>("CreditID");
 
-                    b.Property<string>("CreditAbbrev");
+                    b.Property<string>("CreditAbbrev")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("CreditName");
+                    b.Property<string>("CreditName")
+                        .HasMaxLength(50);
 
                     b.Property<int>("IsFall");
 
@@ -207,9 +209,11 @@ namespace WebApplication4.Migrations
                 {
                     b.Property<int>("DegreeID");
 
-                    b.Property<string>("DegreeAbbrev");
+                    b.Property<string>("DegreeAbbrev")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("DegreeName");
+                    b.Property<string>("DegreeName")
+                        .HasMaxLength(50);
 
                     b.Property<int>("NumberOfTerms");
 
@@ -241,9 +245,11 @@ namespace WebApplication4.Migrations
 
                     b.Property<int?>("DegreeID");
 
-                    b.Property<string>("DegreePlanAbbrev");
+                    b.Property<string>("DegreePlanAbbrev")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("DegreePlanName");
+                    b.Property<string>("DegreePlanName")
+                        .HasMaxLength(50);
 
                     b.Property<int>("StudentID");
 
@@ -287,7 +293,8 @@ namespace WebApplication4.Migrations
 
                     b.Property<int>("DegreePlanID");
 
-                    b.Property<string>("Status");
+                    b.Property<string>("Status")
+                        .HasMaxLength(50);
 
                     b.Property<int>("Term");
 
@@ -304,9 +311,11 @@ namespace WebApplication4.Migrations
                 {
                     b.Property<int>("StudentID");
 
-                    b.Property<string>("Family");
+                    b.Property<string>("Family")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("Given");
+                    b.Property<string>("Given")
+                        .HasMaxLength(50);
 
                     b.Property<int>("Snumber");
 
@@ -325,9 +334,11 @@ namespace WebApplication4.Migrations
 
                     b.Property<int>("Term");
 
-                    b.Property<string>("TermAbbrev");
+                    b.Property<string>("TermAbbrev")
+                        .HasMaxLength(50);
 
-                    b.Property<string>("TermName");
+                    b.Property<string>("TermName")
+                        .HasMaxLength(50);
 
                     b.HasKey("StudentTermID");
 
