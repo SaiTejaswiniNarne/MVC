@@ -14,9 +14,13 @@ namespace WebApplication4.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public int StudentID { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string Family { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string Given { get;  set; }
+        [Range(0, 20)]
         public int Snumber { get; set; }
+        [Range(0, 20)]
         public int number_919 { get; set; }
         public ICollection<DegreePlan> DegreePlans { get; set; }
 
