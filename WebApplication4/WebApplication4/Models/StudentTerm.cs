@@ -15,8 +15,11 @@ namespace WebApplication4.Models
         public int StudentTermID { get; set; }
         [ForeignKey("StudentID")]
         public int StudentID { get; set; }
+        [Range(0, 20)]
         public int Term { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string TermAbbrev { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string TermName { get; set; }
     }
 }
