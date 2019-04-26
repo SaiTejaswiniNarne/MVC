@@ -13,8 +13,11 @@ namespace WebApplication4.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public int DegreeID { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string DegreeAbbrev { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string DegreeName { get; set; }
+        [Range(0, 20)]
         public int NumberOfTerms { get; set; }
         public ICollection<DegreeCredit> DegreeCredits { get; set; }
 
