@@ -22,33 +22,39 @@ namespace WebApplication4.Controllers
         // GET: Credits
         public async Task<IActionResult> Index(string sortOrder, string searchString)
         {
-            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
-            ViewData["DateSortParm"] = sortOrder == "Date1" ? "date_desc1" : "Date1";
+            ViewData["CreditName"] = String.IsNullOrEmpty(sortOrder) ? "CreditName" : "";
+            ViewData["CreditAbbrev"] = String.IsNullOrEmpty(sortOrder) ? "CreditAbbrev" : "";
+            ViewData["CreditID"] = String.IsNullOrEmpty(sortOrder) ? "CreditID" : "";
+            ViewData["IsSummer"] = String.IsNullOrEmpty(sortOrder) ? "IsSummer" : "";
+            ViewData["IsSpring"] = String.IsNullOrEmpty(sortOrder) ? "IsSpring" : "";
+            ViewData["IsFall"] = String.IsNullOrEmpty(sortOrder) ? "IsFall" : "";
             ViewData["CurrentFilter"] = searchString;
             var credits = from s in _context.Credits
                           select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                credits = credits.Where(s => s.CreditAbbrev.Contains(searchString)
-                                       || s.CreditName.Contains(searchString));
+                credits = credits.Where(s => s.CreditName.Contains(searchString)
+                                       || s.CreditAbbrev.Contains(searchString));
             }
             switch (sortOrder)
             {
-                case "name_desc":
-                    credits = credits.OrderByDescending(s => s.CreditAbbrev);
+                case "CreditName":
+                    credits = credits.OrderByDescending(c => c.CreditName);
                     break;
-                case "Date":
-                    credits = credits.OrderBy(s => s.CreditName);
+                case "IsFall":
+                    credits = credits.OrderByDescending(c => c.IsFall);
                     break;
-                case "date_desc":
-                    credits = credits.OrderByDescending(s => s.IsSummer);
+                case "IsSpring":
+                    credits = credits.OrderByDescending(c => c.IsSpring);
                     break;
-                case "date_desc1":
-                    credits = credits.OrderByDescending(s => s.IsSpring);
+                case "IsSummer":
+                    credits = credits.OrderByDescending(c => c.IsSummer);
                     break;
-                default:
-                    credits = credits.OrderBy(s => s.IsFall);
+                case "CreditAbbrev":
+                    credits = credits.OrderByDescending(c => c.CreditAbbrev);
+                    break;
+                case "CreditID":
+                    credits = credits.OrderByDescending(c => c.CreditID);
                     break;
             }
             return View(await credits.AsNoTracking().ToListAsync());
