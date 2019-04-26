@@ -1,8 +1,11 @@
 # MVC
-<h1>Team Members/ Developers</h1>
-<p>Gadekari Sonam</p>
-<p>Naidu Harika</p>
-<p>Narne Sai Tejaswini</p>
+
+<b>Team Members/ Developers:</b> <br>
+<ul>
+<li>Gadekari Sonam</li>
+<li>Naidu Harika</li>
+<li>Narne Sai Tejaswini</li>
+</ul>
 
 <h1>Getting Started</h1>
 <p>Recommended: Visual Studio 2017 Community</p>
