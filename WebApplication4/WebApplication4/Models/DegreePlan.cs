@@ -16,7 +16,9 @@ namespace WebApplication4.Models
         [ForeignKey("StudentID")]
         public int StudentID { get; set; }
         public Student Student { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public String DegreePlanAbbrev { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public String DegreePlanName { get; set; }
         //     [ForeignKey("DegreeID")]
         //     public int DegreeID { get; set; }
