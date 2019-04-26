@@ -10,8 +10,8 @@ using WebApplication4.Data;
 namespace WebApplication4.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190424180949_initBD")]
-    partial class initBD
+    [Migration("20190426040502_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

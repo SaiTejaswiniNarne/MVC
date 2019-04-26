@@ -13,10 +13,15 @@ namespace WebApplication4.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
         public int CreditID { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string CreditAbbrev { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string CreditName { get; set; }
+        [Range(0, 20)]
         public int IsSummer { get; set; }
+        [Range(0, 20)]
         public int IsSpring { get; set; }
+        [Range(0,20)]
         public int IsFall   { get; set; }
         public ICollection<DegreeCredit> DegreeCredits { get; set; }
         public override string ToString()
