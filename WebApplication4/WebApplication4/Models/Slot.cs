@@ -21,6 +21,7 @@ namespace WebApplication4.Models
         public int CreditID { get; set; }
 
         public Credit Credit { get; set; }
+        [StringLength(50, MinimumLength = 3)]
         public string Status { get; set; }
 
         public override string ToString()
