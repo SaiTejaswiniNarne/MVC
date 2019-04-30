@@ -28,22 +28,9 @@
 <p>Build project & dependencies into set of binary files :dotnet build</p>
 <p>To execute the project :dotnet run</p>
 
-<p><b>Sai Tejaswini Narne</b></p>
-<p>My plan is on the Fall 2019: </p>
-<p>Summer with 2 courses</p>
-<p>No summer courses</p>
-
-
-<p><b>Sonam Gadekari</b></p>
-<p>Degree Plan is on the Spring 2019:</p>
-<p>Summer with no courses</p>
-<p>Summer with 2 courses<p>
-
-
-<p><b>Harika Naidu</b></p>
-<p>My plan is on the Fall 2018:</p>
-<p>Summer with no courses</p>
-<p>Summer with 2 courses</p>
+<h6>How to run our application.<h6>
+<p>1)Got to the folder where the application is present and type dotnet run applicationname in powershell.</p>
+<p>2)Open the solution .sln file and click on the run button in visual studio.</p>
 
 <pre>
 +---------------+---------------+-------------------------------------------------------------------+<br/>
@@ -62,25 +49,29 @@ Estimated hours-->
 Cost = Billing rate* Total hours.
 
 Deployment:
-Resource group name: ResourceGroup
-Free Location: "West Europe"
-Azure deployment user-name: team06group
-AppServicePlan Name is : AppServicePlan
-app name: AppUsingDotnetMVC
-git commands to push to cloud repoitory:
+<p>Resource group name: ResourceGroup</p>
+<p>Free Location: "West Europe"</p>
+<p>Azure deployment user-name: team06group</p>
+<p>AppServicePlan Name is : AppServicePlan</p>
+<p>app name: AppUsingDotnetMVC</p>
+<p> Deployed link</p>
+https://appusingdotnetmvc.azurewebsites.net/
+
+<p>git commands to push to cloud repoitory:</p>
+
 git add .
 git commit -m "connect to SQLDB in Azure"
 git remote add azure https://AppDotnetMVC@appusingdotnetmvc.scm.azurewebsites.net/AppUsingDotnetMVC.git
 git push azure master
-
-git is configured with url:
-https://AppDotnetMVC@appusingdotnetmvc.scm.azurewebsites.net/AppUsingDotnetMVC.git
 
 Link for the Issues
 https://github.com/SaiTejaswiniNarne/MVC/issues?q=is%3Aissue+is%3Aclosed
 
 Link To the Repository:
 https://github.com/SaiTejaswiniNarne/MVC
+
+Link to the commits:
+https://github.com/SaiTejaswiniNarne/MVC/commits/master
 
 Link To Team Slide:
 ![image](https://user-images.githubusercontent.com/42949313/56475016-1983c600-6448-11e9-8983-806de5933526.png)
