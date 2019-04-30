@@ -48,7 +48,7 @@ Estimated hours-->
 
 Cost = Billing rate* Total hours.
 
-Deployment:
+<h6>Azure Deployment:</h6>
 <p>Resource group name: ResourceGroup</p>
 <p>Free Location: "West Europe"</p>
 <p>Azure deployment user-name: team06group</p>
@@ -57,7 +57,7 @@ Deployment:
 <p> Deployed link</p>
 https://appusingdotnetmvc.azurewebsites.net/
 
-<p>git commands to push to cloud repoitory:</p>
+<h6>git commands to push to cloud repoitory:</h6>
 
 <p>git add .</p>
 <p>git commit -m "connect to SQLDB in Azure"</p>
