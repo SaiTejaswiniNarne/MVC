@@ -28,7 +28,7 @@
 <p>Build project & dependencies into set of binary files :dotnet build</p>
 <p>To execute the project :dotnet run</p>
 
-<h6>How to run our application.<h6>
+<h6>How to run our application.</h6>
 <p>1)Got to the folder where the application is present and type dotnet run applicationname in powershell.</p>
 <p>2)Open the solution .sln file and click on the run button in visual studio.</p>
 
@@ -59,15 +59,15 @@ https://appusingdotnetmvc.azurewebsites.net/
 
 <p>git commands to push to cloud repoitory:</p>
 
-git add .
-git commit -m "connect to SQLDB in Azure"
-git remote add azure https://AppDotnetMVC@appusingdotnetmvc.scm.azurewebsites.net/AppUsingDotnetMVC.git
-git push azure master
+<p>git add .</p>
+<p>git commit -m "connect to SQLDB in Azure"</p>
+<p>git remote add azure https://AppDotnetMVC@appusingdotnetmvc.scm.azurewebsites.net/AppUsingDotnetMVC.git</p>
+<p>git push azure master</p>
 
-Link for the Issues
+<p>Link for the Issues</p>
 https://github.com/SaiTejaswiniNarne/MVC/issues?q=is%3Aissue+is%3Aclosed
 
-Link To the Repository:
+<p>Link To the Repository:</p>
 https://github.com/SaiTejaswiniNarne/MVC
 
 Link to the commits:
